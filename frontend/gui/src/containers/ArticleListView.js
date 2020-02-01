@@ -27,14 +27,15 @@ class ArticleList extends React.Component {
             .then(res => {
                 this.setState({
                     articles: res.data
-                })
+                });
+                console.log(res.data);
             })
     }
 
 
     render() {
         return (
-            <Articles data={listData} />
+            <Articles data={this.state.articles} />
         )
     }
 }
