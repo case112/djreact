@@ -43,7 +43,7 @@ class CustomForm extends React.Component {
             <Input name="content" placeholder="Enter some content..." />
           </Form.Item>
           <Form.Item>
-        <Button type="primary" htmlType="submit">{this.props.btnText}</Button>
+            <Button type="primary" htmlType="submit">{this.props.btnText}</Button>
           </Form.Item>
         </Form>
       </div>
