@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, compose, applyMiddleware } from 'redux';
@@ -18,7 +17,7 @@ const store = createStore(reducer, composeEnhances(
 
 const app = (
     <Provider>
-        <App />
+        <App store={store} />
     </Provider>
 )
 
