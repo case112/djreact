@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import registerServiceWorker from './registerServiceWorker';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -16,10 +16,10 @@ const store = createStore(reducer, composeEnhances(
 ));
 
 const app = (
-    <Provider>
-        <App store={store} />
+    <Provider store={store}>
+        <App />
     </Provider>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'));
-serviceWorker.unregister();
+ReactDOM.render(app, document.getElementById('root'));
+registerServiceWorker();

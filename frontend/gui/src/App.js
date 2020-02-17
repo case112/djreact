@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import BaseRouter from './routes';
@@ -7,24 +7,26 @@ import * as actions from './store/actions/auth';
 
 import CustomLayout from './containers/layout';
 
-function App() {
+class App extends Component {
 
   componentDidMount() {
     this.props.onTryAutoSignup();
   }
 
-  return (
-    <div >
-      <Router>
-        <CustomLayout {...this.props}>
-          <BaseRouter />
-        </CustomLayout>
-      </Router>
-    </div>
-  );
+  render() {
+    return (
+      <div >
+        <Router>
+          <CustomLayout {...this.props}>
+            <BaseRouter />
+          </CustomLayout>
+        </Router>
+      </div>
+    );
+  }
 }
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     isAuthenticated: state.token !== null
   }
@@ -37,3 +39,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
