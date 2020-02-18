@@ -5,7 +5,7 @@ import BaseRouter from './routes';
 import 'antd/dist/antd.css';
 import * as actions from './store/actions/auth';
 
-import CustomLayout from './containers/layout';
+import CustomLayout from './containers/Layout';
 
 class App extends Component {
 
@@ -15,10 +15,10 @@ class App extends Component {
 
   render() {
     return (
-      <div >
+      <div>
         <Router>
           <CustomLayout {...this.props}>
-            <BaseRouter />
+              <BaseRouter />
           </CustomLayout>
         </Router>
       </div>
@@ -39,4 +39,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
